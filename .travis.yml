@@ -22,8 +22,8 @@ matrix:
 script:
   - if [ "$WITH_COVERALLS" == "true" ];
     then
-      mvn -f com.examples.myproject/pom.xml clean verify -Pjacoco
+      mvn -f com.example.myproject/pom.xml clean verify -Pjacoco
       coveralls:report;
     else
-      mvn -f com.examples.myproject/pom.xml clean verify;
+      mvn -f com.example.myproject/pom.xml clean verify;
     fi  
