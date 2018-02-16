@@ -17,3 +17,5 @@ include:
   env: WITH_COVERALLS=true
 - jdk: oraclejdk7
 - jdk: openjdk6
+- os: osx
+  osx_image: xcode8
