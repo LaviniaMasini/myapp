@@ -2,32 +2,13 @@ language: java
 #skip installation step
 install: true
 
-script:
-<<<<<<< HEAD
-  - if [ "$WITH_COVERALLS" == "true" ];
-    then
-      mvn -f com.example.myproject/pom.xml clean verify -Pjacoco
-      coveralls:report;
-  else
-    mvn -f com.example.myproject/pom.xml clean verify;
-    fi
 
 jdk:
-- oraclejdk8
-- oraclejdk7
-- openjdk6
-=======
-- if [ "$WITH_COVERALLS" == "true" ];
-then
-mvn -f com.example.myproject/pom.xml clean verify -Pjacoco
-coveralls:report;
-else
-mvn -f com.example.myproject/pom.xml clean verify;
-fi
->>>>>>> branch 'multiple_oses' of https://github.com/LaviniaMasini/myapp.git
-
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk6
+  
 matrix:
-<<<<<<< HEAD
   fast_finish: true
   include:
     - jdk: oraclejdk8
@@ -35,14 +16,14 @@ matrix:
     - jdk: oraclejdk7
     - jdk: openjdk6
     - os: osx
-      osx_image: xcode8
-=======
-fast_finish: true
-include:
-- jdk: oraclejdk8
-env: WITH_COVERALLS=true
-- jdk: oraclejdk7
-- jdk: openjdk6
-- os: osx
-osx_image: xcode8
->>>>>>> branch 'multiple_oses' of https://github.com/LaviniaMasini/myapp.git
+      osx_image: xcode8 
+  
+  
+script:
+  - if [ "$WITH_COVERALLS" == "true" ];
+    then
+      mvn -f com.examples.myproject/pom.xml clean verify -Pjacoco
+      coveralls:report;
+    else
+      mvn -f com.examples.myproject/pom.xml clean verify;
+    fi  
