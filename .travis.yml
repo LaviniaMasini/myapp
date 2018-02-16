@@ -6,4 +6,7 @@ script:
 
 - mvn -f com.example.myproject/pom.xml clean verify -Pjacoco coveralls:report
 
-
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk6
